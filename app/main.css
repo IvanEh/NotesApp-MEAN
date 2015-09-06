@@ -1,0 +1,273 @@
+body {
+	background: #C8C8C8  ;
+	padding-bottom: 70px !important;
+}
+
+
+.col-md-4 {
+	padding: 15px 4% 110px 0px;
+	padding-left: 4% !important;
+}
+
+/*Header*/
+.navbar {
+	border-bottom: 1px solid #241456;
+}
+
+.navbar-brand {
+	line-height: 7pt;
+}
+
+.navbar-brand > span {
+	font-size: 10pt;
+	color: #241456 !important;
+}
+.navbar .nav-btn {
+	min-width: 10%;
+
+	border: solid 1px #241456;
+	border-radius: 0px;
+	border-top: solid 0px;
+	border-left: solid 0px;
+}
+
+.navbar .nav-btn:first-child {
+	border-left: solid 1px #241456;
+}
+
+.search-btn {
+	border: solid 1px #241456;
+	color: #241456;
+}
+
+.search-input {
+	border: solid 1px #241456;
+	color: #241456;
+}
+/*Note*/
+.fake-note {
+	position: relative;
+	visibility: hidden;
+
+	width: 289px;
+	height: 138px;
+
+	background: rgba(47,62,83, 0) ;
+
+	transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+ 	-o-transition: all 0.5s ease;
+}
+
+.fake-note:hover {
+	visibility: visible;
+	background: rgba(47,62,83, 0.15) ;
+}
+
+.note {
+	position: relative;
+
+	background: #2f3e53 ;
+	color: #91ABD4;
+	border-radius: 3px;
+	-webkit-box-shadow: 2px 2px 1px 0px rgba(15, 5, 33, 0.7);
+	-moz-box-shadow: 2px 2px 1px 0px rgba(15, 5, 33, 0.7);
+	box-shadow: 2px 2px 1px 0px rgba(15, 5, 33, 0.7);
+
+	padding: 0px 0px;
+	margin-bottom: 15px;
+}
+
+.note > div {
+/*	padding-left: 15px;
+	padding-right: 15px; */
+}
+
+.note-title {
+	box-sizing: content-box;
+	padding: 0px !important;
+	display: table;
+	width: 100%;
+}
+
+.note-title > .note-flag {
+	display: table-cell;
+	width: 5px;
+	/*border-left: solid 10px #b86962; */
+}
+
+.note-title > input {
+	background: #2f3e53;
+	display: table-cell;
+	width: 100%;
+	height: 34;
+	padding: 6px 10px;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 1.42857;
+	border: 0px solid #CCC;
+	border-radius: 0px;
+
+	transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+ 	-o-transition: all 0.5s ease;
+}
+
+.note-title > input:hover {
+	background: #374962;
+}
+
+.note:hover .glyphicon {
+	opacity:  1;
+}
+
+.note-title > .glyphicon {
+	display: table-cell;
+	top: 0px;
+	opacity: 0.3;
+	/*border-bottom: solid #b86962 1px;*/
+	transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+ 	-o-transition: all 0.5s ease;
+}
+
+.note-title > input:hover + .glyphicon {
+	background: #374962;
+}
+
+.note-content {
+	border-top: solid #b86962 1px;
+	border-bottom: solid #b86962 1px;
+	display: table;
+	width: 100%;
+	max-height: 500px;
+}
+
+.note-content > textarea {
+	background: #2f3e53;
+	display: table-cell;
+	width: 100%;
+	height: 34;
+	padding: 6px 15px;
+	font-size: 14px;
+	line-height: 1.42857;
+	border: 0px solid #CCC;
+	border-radius: 0px;
+	resize: vertical;
+
+	transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+ 	-o-transition: all 0.5s ease;
+}
+	
+
+.note-content > textarea:hover {
+	background: #374962;
+}
+
+.note-toolbar {
+	font-size: 7pt;
+	padding: 1px;
+	background-color: #141F2F;
+
+}
+
+      
+
+.note-tool {
+	display: inline-block;
+	float: right;
+	min-width: 45px;
+	max-width: 60px;
+
+	font-size: 8pt;
+	background: #756c87;
+	color: #C3C3C3;
+	border: solid #6B5B8C 1px;
+
+	cursor:pointer;
+	text-decoration:none;
+}
+
+.note-tool-group > .note-tool:last-child {
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+
+.note-tool-group > .note-tool:first-child {
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+.note-tool:hover {
+	background-color: #7F7496 ;
+}
+
+.note-tool:active {
+	position:relative;
+	top:1px;
+}
+
+.note-info-date {
+	display: inline-block;
+	float: right;
+
+	color: gray;
+	font-size: 8pt;
+}
+
+.note-info-cat {
+	display: inline-block;
+	float: left;
+	
+	background: inherit;
+	border: none;
+	color: gray;
+	font-size: 8pt;
+}
+
+.note-add {
+	display: inline-block;
+
+	width: 40px;
+	height: 40px;
+
+	background: #00B7FF;
+	color: #333;
+	font-size: 20pt;
+	text-align: center;
+	border-radius: 50%;
+
+	-webkit-box-shadow: 2px 2px 1px 0px gray
+	-moz-box-shadow: 2px 2px 1px 0px gray;
+	box-shadow: 2px 2px 1px 0px gray; 
+
+	transition: all 0.4s ease;
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+ 	-o-transition: all 0.4s ease;
+}
+
+.note-add:hover {
+	background: #00F6FF ;
+} 
+
+.note-add:active {
+	position: relative;
+	top: 1px;
+}
+
+.centered {
+	opacity: 1 !important;
+	width: 100%;
+	text-align: center;
+}
+
+.abs-centered {
+		position: absolute;
+		visibility: visible;
+		top: 35%;
+}

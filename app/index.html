@@ -2,42 +2,194 @@
 <!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> 
+<html lang="en"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>My AngularJS App</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-  <link rel="stylesheet" href="app.css">
-  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <link rel="stylesheet" href = "bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="main.css">
 </head>
-<body>
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
-  </ul>
+<body ng-app="myApp">
 
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+<nav class = "navbar navbar-default navbar-static-top">
+<div class = "container-fluid">
 
-  <div ng-view></div>
+  <div class="navbar-header">
+    <div class = "navbar-brand">Notes Dummy<br/><span class = "navbar-text">All notes</span></div>
+    
+  </div>
 
-  <div>Angular seed app: v<span app-version></span></div>
+  <div class="navbar-left">
+    
+    <div class="dropdown nav-dropdown">
+
+      <button class = "btn dropdown-toggle nav-btn" type = "button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Categories  <span class="caret"></span> </button>
+
+       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="#">Default</a></li>
+          <li><a href="#">Archive</a></li>
+        </ul>
+    </div>
+  
+  </div>
+
+ <button class = "btn nav-btn" type = "button">Archive</button><button class = "btn nav-btn" type = "button">Manage position</button>
+  <div class="navbar-right">
+    <!-- <span class = "navbar-text">Search: </span> -->
+    <form class="navbar-form">
+      <input type="text" placeholder="Seach" class = "form-control  search-input">
+      <button class ="btn search-btn"><span class = "glyphicon glyphicon-search"></span></button>
+    </form>
+  </div>
+</div>
+</nav>
+
+  <div>
+  <div class = "container">
+    <div class = "col-md-4" >
+      
+      <div class = "note">
+        <div class = "note-title">
+           <div class = "note-flag"></div>
+           <input type="text" placeholder="Title">
+           <div class = "glyphicon glyphicon-pencil"></div>
+        </div>
+        <div class = "note-content">
+          <textarea placeholder="Content"></textarea>
+          <div class = "note-info-date">01.01.2015</div>
+          <select class="note-info-cat">
+                <option value="">Default</option>
+                <option value="s">Important</option>
+          </select>
+
+        </div>
+        <div class = "note-toolbar">
+          <div class="note-tool-group">
+            <div class="note-tool">archive</div>
+            <div class="note-tool">flag color</div>
+            <div class="note-tool">clear</div>
+          </div>
+          <div class="note-tool" style="float:left">delete</div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <div class = "col-md-4" ng-controller = "NotesController as notesCtrl">
+      
+      <div class = "note" ng-repeat = "(key, note) in notesCtrl.column(2)">
+       
+        <div class = "note-title">
+           <div class = "note-flag" ng-style = "notesCtrl.flagCss(key)"></div>
+           <input type="text" placeholder="Title" ng-model = "note.title">
+           <div class = "glyphicon glyphicon-pencil"></div>
+        </div>
+        <div class = "note-content">
+        
+          <textarea placeholder="Content" ng-model = "note.content"></textarea>
+          <div class = "note-info-date">{{note.date}}</div>
+          <select class="note-info-cat" ng-model = "note.categoryId" ng-options = "cat.id as cat.label for cat in notesCtrl.categories">
+        
+          </select>
+        </div>
+
+        <div class = "note-toolbar">
+          <div class="note-tool-group">
+            <div class="note-tool" ng-click = "">archive</div>
+            <div class="note-tool" ng-click = "notesCtrl.nextFlag(key)">flag color</div>
+            <div class="note-tool" ng-click = "note.content = ''">clear</div>
+          </div>
+          <div class="note-tool" style="float:left" ng-click = "notesCtrl.remove(key)">delete</div>
+          <div class="clearfix"></div>
+        </div>
+
+      </div>
+    <!-- </div> -->
+
+      <div class = "fake-note">
+            <div class = "centered abs-centered"><div class = "note-add" ng-click = "notesCtrl.addEmpty()">+</div></div>
+     </div>
+
+   </div>
+     <div class = "col-md-4" >
+      
+      <div class = "note">
+        <div class = "note-title">
+           <div class = "note-flag"></div>
+           <input type="text" placeholder="Title">
+           <div class = "glyphicon glyphicon-pencil"></div>
+        </div>
+        <div class = "note-content">
+          <textarea placeholder="Content"></textarea>
+          <div class = "note-info-date">01.01.2015</div>
+          <select class="note-info-cat">
+                <option value="">Default</option>
+                <option value="s">Important</option>
+          </select>
+   <!--        <div class = "note-info-cat">some category<span class="caret"></span></div> -->
+        </div>
+        <div class = "note-toolbar">
+          <div class="note-tool-group">
+            <div class="note-tool">archive</div>
+            <div class="note-tool">flag color</div>
+            <div class="note-tool">clear</div>
+          </div>
+          <div class="note-tool" style="float:left">delete</div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+       _
+  <div class = "note">
+        <div class = "note-title">
+           <div class = "note-flag"></div>
+           <input type="text" placeholder="Title">
+           <div class = "glyphicon glyphicon-pencil"></div>
+        </div>
+        <div class = "note-content">
+          <textarea placeholder="Content"></textarea>
+          <div class = "note-info-date">01.01.2015</div>
+          <select class="note-info-cat">
+                <option value="">Default</option>
+                <option value="s">Important</option>
+          </select>
+   <!--        <div class = "note-info-cat">some category<span class="caret"></span></div> -->
+        </div>
+        <div class = "note-toolbar">
+          <div class="note-tool-group">
+            <div class="note-tool">archive</div>
+            <div class="note-tool">flag color</div>
+            <div class="note-tool">clear</div>
+          </div>
+          <div class="note-tool" style="float:left">delete</div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+<div>
+  <div class = "container">
+  </div>
+  </div>
+
+
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
+  <script src = "bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="app.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
-</body>
 </html>
