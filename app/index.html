@@ -49,11 +49,11 @@
 </nav>
 
   <div>
-  <div class = "container">
+  <div class = "container" ng-controller = "NotesController as notesCtrl">
     <!-- Column 1 -->
-  <div class = "col-md-4" ng-controller = "NotesController as notesCtrl">
+  <div class = "col-md-4">
       
-      <div class = "note" ng-repeat = "(key, note) in notesCtrl.column(2)">
+      <div class = "note" ng-repeat = "(key, note) in notesCtrl.column(1)">
        
         <div class = "note-title">
            <div class = "note-flag" ng-style = "notesCtrl.flagCss(key)"></div>
@@ -81,18 +81,18 @@
 
       </div>
     <!-- </div> -->
-
-      <div class = "fake-note">
-            <div class = "centered abs-centered"><div class = "note-add" ng-click = "notesCtrl.addEmpty()">+</div></div>
-     </div>
 
    </div>
 
     <!-- Column 1 end -->
 
     <!-- Column 2 -->
-    <div class = "col-md-4" ng-controller = "NotesController as notesCtrl">
+    <div class = "col-md-4">
       
+     <div class = "fake-note">
+          <div class = "centered abs-centered"><div class = "note-add" ng-click = "notesCtrl.addEmpty()">+</div></div>
+     </div>
+
       <div class = "note" ng-repeat = "(key, note) in notesCtrl.column(2)">
        
         <div class = "note-title">
@@ -121,10 +121,6 @@
 
       </div>
     <!-- </div> -->
-
-      <div class = "fake-note">
-            <div class = "centered abs-centered"><div class = "note-add" ng-click = "notesCtrl.addEmpty()">+</div></div>
-     </div>
 
    </div>
 
@@ -132,7 +128,7 @@
 
    <!-- Column 3 -->
 
-    <div class = "col-md-4" ng-controller = "NotesController as notesCtrl">
+    <div class = "col-md-4">
       
       <div class = "note" ng-repeat = "(key, note) in notesCtrl.column(3)">
        
@@ -162,10 +158,6 @@
 
       </div>
     <!-- </div> -->
-
-      <div class = "fake-note">
-            <div class = "centered abs-centered"><div class = "note-add" ng-click = "notesCtrl.addEmpty()">+</div></div>
-     </div>
 
    </div>
 

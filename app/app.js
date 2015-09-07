@@ -18,6 +18,8 @@ function NotesController ($scope) {
 		"#7F34B4"
 	]
 
+	this.notesCollections = [[],[],[]];
+
 	this.notes = [
 		{title: "Default Note 1",
 		 content: "Nothing here",
@@ -91,7 +93,7 @@ NotesController.prototype.nextFlag = function (id) {
 
 NotesController.prototype.addEmpty = function () {
 	this.notes.push({
-		 title: "Default Note",
+		 title: "Default Note " + (this.notes.length + 1),
 		 content: "Nothing here",
 		 categoryId: 1,
 		 date: "01.01.2015",
@@ -106,13 +108,19 @@ NotesController.prototype.remove = function(key) {
 
 NotesController.prototype.column = function(col) {
 	var n = this.notes.length;
-	var collection = [];
+	var collection = this.notesCollections[col-1];
 	var c = Math.ceil(n / 3.0);
-
+	console.log("-" + col);
+	console.log(c);
+	console.log(n);
 	for(var i = 0, len = c; i < len; i++){
 		var t = this.notes[i*c +col- 1];
-		if(t != undefined)
+		if(t != undefined) {
 			collection[i] = t;
+		}else{
+			console.log(col + "*" + i);
+
+		}
 	}
 
 	return collection;
