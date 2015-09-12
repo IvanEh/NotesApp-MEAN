@@ -50,10 +50,10 @@ body {
 	position: relative;
 	visibility: hidden;
 
-	margin-bottom: 15px;
+	margin-bottom: 0px;
 
 	width: 100%;
-	height: 75px;
+	height: 50px;
 
 	background: rgba(47,62,83, 0) ;
 
@@ -271,7 +271,9 @@ body {
 }
 
 .abs-centered {
-		position: absolute;
+		position: fixed;
 		visibility: visible;
-		top: 20%;
+		top: 90%;
+		left: 47%;
 }
+

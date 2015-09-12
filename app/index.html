@@ -50,7 +50,9 @@
 
   <div>
   <div class = "container" ng-controller = "NotesController as notesCtrl">
+
     <!-- Column 1 -->
+
   <div class = "col-md-4">
       
       <div class = "note" ng-repeat = "(key, note) in notesCtrl.column(1)">
@@ -89,10 +91,6 @@
     <!-- Column 2 -->
     <div class = "col-md-4">
       
-     <div class = "fake-note">
-          <div class = "centered abs-centered"><div class = "note-add" ng-click = "notesCtrl.addEmpty()">+</div></div>
-     </div>
-
       <div class = "note" ng-repeat = "(key, note) in notesCtrl.column(2)">
        
         <div class = "note-title">
@@ -171,7 +169,7 @@
   </div>
   </div>
 
-
+        <div class = "centered abs-centered"><div class = "note-add" ng-click = "notesCtrl.addEmpty()">+</div></div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
