@@ -113,8 +113,11 @@ NotesController.prototype.column = function(col) {
 	console.log("-" + col);
 	console.log(c);
 	console.log(n);
+	if(col == 1)
+		console.log(this.notes);
+
 	for(var i = 0, len = c; i < len; i++){
-		var t = this.notes[i*c +col- 1];
+		var t = this.notes[i*3 +col- 1];
 		if(t != undefined) {
 			collection[i] = t;
 		}else{
