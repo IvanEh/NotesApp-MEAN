@@ -102,28 +102,23 @@ NotesController.prototype.addEmpty = function () {
 }
 
 NotesController.prototype.remove = function(key) {
-	console.log(key);
+	console.log(key + "deleted");
 	this.notes.splice(key, 1);
 }
 
 NotesController.prototype.column = function(col) {
 	var n = this.notes.length;
 	var collection = this.notesCollections[col-1];
+	collection.splice(0, collection.length);
 	var c = Math.ceil(n / 3.0);
-	console.log("-" + col);
-	console.log(c);
-	console.log(n);
-	if(col == 1)
-		console.log(this.notes);
+
+	console.log("col" + col + " n:" + n);
 
 	for(var i = 0, len = c; i < len; i++){
 		var t = this.notes[i*3 +col- 1];
-		if(t != undefined) {
+		if(t != undefined) 
 			collection[i] = t;
-		}else{
-			console.log(col + "*" + i);
 
-		}
 	}
 
 	return collection;

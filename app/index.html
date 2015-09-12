@@ -77,7 +77,7 @@
             <div class="note-tool" ng-click = "notesCtrl.nextFlag(key)">flag color</div>
             <div class="note-tool" ng-click = "note.content = ''">clear</div>
           </div>
-          <div class="note-tool" style="float:left" ng-click = "notesCtrl.remove(key)">delete</div>
+          <div class="note-tool" style="float:left" ng-click = "notesCtrl.remove(key*3)">delete</div>
           <div class="clearfix"></div>
         </div>
 
@@ -113,7 +113,7 @@
             <div class="note-tool" ng-click = "notesCtrl.nextFlag(key)">flag color</div>
             <div class="note-tool" ng-click = "note.content = ''">clear</div>
           </div>
-          <div class="note-tool" style="float:left" ng-click = "notesCtrl.remove(key)">delete</div>
+          <div class="note-tool" style="float:left" ng-click = "notesCtrl.remove(key, 2)">delete</div>
           <div class="clearfix"></div>
         </div>
 
@@ -150,7 +150,7 @@
             <div class="note-tool" ng-click = "notesCtrl.nextFlag(key)">flag color</div>
             <div class="note-tool" ng-click = "note.content = ''">clear</div>
           </div>
-          <div class="note-tool" style="float:left" ng-click = "notesCtrl.remove(key)">delete</div>
+          <div class="note-tool" style="float:left" ng-click = "notesCtrl.remove(key, 3)">delete</div>
           <div class="clearfix"></div>
         </div>
 
