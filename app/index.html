@@ -58,7 +58,7 @@
       <div class = "note" ng-repeat = "(key, note) in notesCtrl.column(1)">
        
         <div class = "note-title">
-           <div class = "note-flag" ng-style = "notesCtrl.flagCss(key)"></div>
+           <div class = "note-flag" ng-style = "notesCtrl.flagCss(key, 1)"></div>
            <input type="text" placeholder="Title" ng-model = "note.title">
            <div class = "glyphicon glyphicon-pencil"></div>
         </div>
@@ -74,10 +74,10 @@
         <div class = "note-toolbar">
           <div class="note-tool-group">
             <div class="note-tool" ng-click = "">archive</div>
-            <div class="note-tool" ng-click = "notesCtrl.nextFlag(key)">flag color</div>
+            <div class="note-tool" ng-click = "notesCtrl.nextFlag(key,1 )">flag color</div>
             <div class="note-tool" ng-click = "note.content = ''">clear</div>
           </div>
-          <div class="note-tool" style="float:left" ng-click = "notesCtrl.remove(key*3)">delete</div>
+          <div class="note-tool" style="float:left" ng-click = "notesCtrl.remove(key, 1)">delete</div>
           <div class="clearfix"></div>
         </div>
 
@@ -94,7 +94,7 @@
       <div class = "note" ng-repeat = "(key, note) in notesCtrl.column(2)">
        
         <div class = "note-title">
-           <div class = "note-flag" ng-style = "notesCtrl.flagCss(key)"></div>
+           <div class = "note-flag" ng-style = "notesCtrl.flagCss(key, 2)"></div>
            <input type="text" placeholder="Title" ng-model = "note.title">
            <div class = "glyphicon glyphicon-pencil"></div>
         </div>
@@ -110,7 +110,7 @@
         <div class = "note-toolbar">
           <div class="note-tool-group">
             <div class="note-tool" ng-click = "">archive</div>
-            <div class="note-tool" ng-click = "notesCtrl.nextFlag(key)">flag color</div>
+            <div class="note-tool" ng-click = "notesCtrl.nextFlag(key, 2)">flag color</div>
             <div class="note-tool" ng-click = "note.content = ''">clear</div>
           </div>
           <div class="note-tool" style="float:left" ng-click = "notesCtrl.remove(key, 2)">delete</div>
@@ -131,7 +131,7 @@
       <div class = "note" ng-repeat = "(key, note) in notesCtrl.column(3)">
        
         <div class = "note-title">
-           <div class = "note-flag" ng-style = "notesCtrl.flagCss(key)"></div>
+           <div class = "note-flag" ng-style = "notesCtrl.flagCss(key, 3)"></div>
            <input type="text" placeholder="Title" ng-model = "note.title">
            <div class = "glyphicon glyphicon-pencil"></div>
         </div>
@@ -147,7 +147,7 @@
         <div class = "note-toolbar">
           <div class="note-tool-group">
             <div class="note-tool" ng-click = "">archive</div>
-            <div class="note-tool" ng-click = "notesCtrl.nextFlag(key)">flag color</div>
+            <div class="note-tool" ng-click = "notesCtrl.nextFlag(key, 3)">flag color</div>
             <div class="note-tool" ng-click = "note.content = ''">clear</div>
           </div>
           <div class="note-tool" style="float:left" ng-click = "notesCtrl.remove(key, 3)">delete</div>

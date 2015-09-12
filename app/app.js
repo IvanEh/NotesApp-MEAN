@@ -70,7 +70,10 @@ NotesController.prototype.categoryOf = function (id) {
 	return this.categories[id] || "Null";
 }
 
-NotesController.prototype.flagCss = function (id) {
+NotesController.prototype.flagCss = function (id, col) {
+	if(col != undefined)
+		id = id*3 + col - 1;
+
 	var note = this.notes[id];
 
 		var css = {
@@ -80,7 +83,10 @@ NotesController.prototype.flagCss = function (id) {
 	return css;
 }
 
-NotesController.prototype.nextFlag = function (id) {
+NotesController.prototype.nextFlag = function (id, col) {
+	if(col != undefined)
+		id = id*3 + col - 1;
+
 	var note = this.notes[id];
 
 	note.flagId++;
@@ -101,8 +107,9 @@ NotesController.prototype.addEmpty = function () {
 		});
 }
 
-NotesController.prototype.remove = function(key) {
-	console.log(key + "deleted");
+NotesController.prototype.remove = function(key, col) {
+	if(col != undefined)
+		key = key*3 + col - 1;
 	this.notes.splice(key, 1);
 }
 
@@ -111,8 +118,6 @@ NotesController.prototype.column = function(col) {
 	var collection = this.notesCollections[col-1];
 	collection.splice(0, collection.length);
 	var c = Math.ceil(n / 3.0);
-
-	console.log("col" + col + " n:" + n);
 
 	for(var i = 0, len = c; i < len; i++){
 		var t = this.notes[i*3 +col- 1];
