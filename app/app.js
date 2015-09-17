@@ -77,7 +77,7 @@ NotesController.prototype.flagCss = function (id, col) {
 	var note = this.notes[id];
 
 		var css = {
-			'border-left': "solid 10px " + this.flags[note.flagId]
+			'border-left': "solid 12px " + this.flags[note.flagId]
 		}
 
 	return css;
